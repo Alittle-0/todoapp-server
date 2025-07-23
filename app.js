@@ -9,11 +9,10 @@ const app = express();
 connectDB();
 
 const CORS = {
-    origin: process.env.FRONTEND_URL || "http://localhost:3001" || "http://127.0.0.1:3001",
+    origin: process.env.FRONTEND_URL,
     credentials: true,
     optionsSuccessStatus: 200
-  };
-
+};
 app.use(cors(CORS));
 app.use(express.json());
 app.use("/api/tasks", taskRoutes);
