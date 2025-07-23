@@ -21,6 +21,11 @@ const CORS = {
 };
 app.use(cors(CORS));
 app.use(express.json());
+
+app.get('/', (req, res) => {
+    res.json({ message: 'Todo API is running!' });
+});
+
 app.use("/api/tasks", taskRoutes);
 
 const PORT = process.env.PORT || 3001;
